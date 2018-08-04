@@ -3,18 +3,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page One</ion-title>
+    <ion-title>Weekly Budget</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <!--<h3>Weekly Budget</h3>-->
 
-     <div class="center">
+     <!--<div class="center">
         <p class="ionic-logo"></p>
-    </div>
+    </div>-->
 
-    <ion-card>
+    <!--<ion-card>
         <ion-card-header>
             Docs are here to help
         </ion-card-header>
@@ -46,7 +46,97 @@
             </button>
         </ion-list>
         
-    </ion-card>
+    </ion-card>-->
 
-	  <button ion-button secondary menuToggle>Toggle Menu</button>
+	  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
+
+     <article class="post-content ng-scope" ng-controller="Page1Ctrl">
+       <div class="chart">
+         <div id="piechart"></div>
+       </div>
+       <!--<p>Weekly Budget</p>-->
+       <form (ngSubmit)="drawChart()" id="ChartForm">
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Housing:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="housingVar" value="600" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Commute:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="commuteVar" value="100" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Grocery:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="groceryVar" value="300" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Insurance:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="insuranceVar" value="250" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Other:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="otherVar" value="150" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+
+         <label>
+           <ion-row>
+             <ion-col width-34 class="label-right">
+               Savings:&nbsp;&nbsp;
+             </ion-col>
+             <ion-col width-66>
+               $
+               <input type="text" id="savingsVar" value="100" class="input-width">
+             </ion-col>
+             <ion-col width-33></ion-col>
+           </ion-row>
+         </label>
+         
+         <br />
+
+         <button ion-button type="submit" block>Calculate</button>
+       </form>
+     </article>
 </ion-content>

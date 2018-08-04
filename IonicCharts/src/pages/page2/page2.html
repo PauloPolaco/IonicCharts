@@ -3,21 +3,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page Two</ion-title>
+    <ion-title>About</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+<ion-content padding>
+
+  <div class="center">
+    <p class="ionic-logo"></p>
   </div>
+
+  <ion-card>
+      <ion-card-header>
+          Thanks for downloading our sample.
+      </ion-card-header>
+
+      <ion-list>
+          <button ion-item (click)="onLink('https://github.com/PauloPolaco/IonicCharts')">
+              <ion-icon name="logo-github" item-left></ion-icon>
+              GitHub Repo
+          </button>
+
+          <button ion-item (click)="onLink('http://appgraft.com')">
+              <ion-icon name="ios-construct" item-left></ion-icon>
+              AppGraft Website
+          </button>
+
+          <button ion-item (click)="onLink('http://appgraft.com/Contact')">
+              <ion-icon name="ios-contact" item-left></ion-icon>
+              Contact Us
+          </button>
+      </ion-list>
+
+  </ion-card>
 </ion-content>
